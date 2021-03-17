@@ -1,10 +1,6 @@
 package dbserver.projetomentoria.model;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import org.springframework.format.annotation.DateTimeFormat;
-
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 public class Cars {
     private Long id;
@@ -14,6 +10,7 @@ public class Cars {
     private boolean available;
     private LocalDateTime createdAt;
     private Long categoriesId;
+    private Categories categories;
 
     public Cars(Long id, String name, String description, String brand, boolean available, LocalDateTime createdAt, Long categoriesId) {
         this.id = id;
@@ -79,5 +76,13 @@ public class Cars {
 
     public void setCategoriesId(Long categoriesId) {
         this.categoriesId = categoriesId;
+    }
+
+    public Categories getCategories() {
+        return categories;
+    }
+
+    public void setCategories(Categories categories) {
+        this.categories = categories;
     }
 }
